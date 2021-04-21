@@ -59,14 +59,11 @@ const styles = StyleSheet.create({
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
-    const renderItem = ({ item }) => (
-        <RepositoryItem repo={item} />
-    );
     return (
         <FlatList
         data={repositories}
         ItemSeparatorComponent={ItemSeparator}
-        renderItem={renderItem}
+        renderItem={({ item }) => (<RepositoryItem repo={item} />)}
         />
     );
 };
